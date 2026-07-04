@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Clara</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap');
+        body {margin:0;padding:0;font-family:'Montserrat',sans-serif;background:linear-gradient(135deg,#e0f2f1 0%,#ffffff 100%);color:#333;text-align:center;}
+        .container{max-width:450px;margin:20px auto;padding:30px 20px;background:rgba(255,255,255,.9);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.05);border:2px solid #b2dfdb;}
+        h1{font-family:'Alex Brush',cursive;font-size:4.5rem;color:#00796b;margin:10px 0;font-weight:normal;}
+        .subtitle{font-size:1.2rem;text-transform:uppercase;letter-spacing:4px;color:#555;margin-bottom:20px;}
+        .fecha{font-size:1.4rem;font-weight:600;color:#004d40;margin:20px 0;border-top:1px solid #b2dfdb;border-bottom:1px solid #b2dfdb;padding:10px 0;}
+        .countdown{display:flex;justify-content:space-around;margin:25px 0;background:#e0f7fa;padding:15px;border-radius:12px;}
+        .countdown-item{font-weight:600;font-size:1.2rem;color:#00796b;}
+        .countdown-item span{display:block;font-size:.8rem;text-transform:uppercase;color:#666;font-weight:400;}
+        .info-section{margin:30px 0}.info-title{font-size:1.1rem;font-weight:600;color:#00796b;margin-bottom:5px;}
+        .btn{display:inline-block;width:85%;padding:14px;margin:10px 0;border-radius:30px;text-decoration:none;font-weight:600;font-size:1rem;transition:.3s;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .btn-confirmar{background:#25D366;color:#fff}.btn-mapa{background:#00796b;color:#fff}.btn:hover{transform:translateY(-2px)}
+        .gift-card{background:#fff;border:1px dashed #00796b;padding:15px;border-radius:12px;margin-top:30px}.nro-cuenta{font-size:1.2rem;font-weight:600;color:#004d40}
+    </style>
+</head><body>
+<div class="container">
+<div class="subtitle">Mis 15 Años</div><h1>Clara</h1>
+<p style="font-style:italic;color:#666;">Hay momentos que son inolvidables, y compartirlos con quienes más queremos los hace eternos.</p>
+<div class="fecha">Sábado, 1 de Agosto de 2026</div>
+<div class="countdown" id="reloj">
+<div class="countdown-item"><div id="dias">00</div><span>Días</span></div>
+<div class="countdown-item"><div id="horas">00</div><span>Horas</span></div>
+<div class="countdown-item"><div id="minutos">00</div><span>Min</span></div>
+<div class="countdown-item"><div id="segundos">00</div><span>Seg</span></div>
+</div>
+<div class="info-section"><div class="info-title">📍 Salón de Fiestas</div><p>Villa Elena</p><a href="https://maps.google.com" target="_blank" class="btn btn-mapa">Ver Ubicación en Mapa</a></div>
+<div class="info-section"><div class="info-title">💬 Confirmación de Asistencia</div><p>Por favor, confirma tu presencia antes del 15 de Julio.</p><a href="https://wa.me/59899000000?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%2015%20de%20Clara" class="btn btn-confirmar">Confirmar por WhatsApp</a></div>
+<div class="gift-card"><div class="info-title">🎁 El mejor regalo es tu presencia</div><p>Si deseas realizar un obsequio, puedes colaborar en el colectivo:</p><p><strong>Prex N°:</strong> <span class="nro-cuenta">11221122</span></p><p>A nombre de Clara</p></div>
+</div>
+<script>
+const fechaEvento=new Date('Aug 1, 2026 21:00:00').getTime();
+setInterval(()=>{const d=fechaEvento-Date.now();if(d<0){document.getElementById('reloj').innerHTML="¡Llegó el gran día!";return;}
+document.getElementById('dias').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
+document.getElementById('horas').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+document.getElementById('minutos').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
+document.getElementById('segundos').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');
+},1000);
+</script></body></html>
